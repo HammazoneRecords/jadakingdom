@@ -1,12 +1,13 @@
 import { motion } from 'motion/react';
 
 const ITEMS = [
-  { label: 'On Stage',          gradient: 'linear-gradient(150deg, #1e3025, #1a1215)', span: 'md:col-span-2 md:row-span-2' },
-  { label: 'Behind the Scenes', gradient: 'linear-gradient(120deg, #1a1a20, #201a1a)', span: '' },
-  { label: 'Studio Session',    gradient: 'linear-gradient(100deg, #1a201a, #1a1a20)', span: '' },
-  { label: 'Music Video Set',   gradient: 'linear-gradient(140deg, #201a1a, #1a201a)', span: 'md:col-span-2' },
-  { label: 'Live Performance',  gradient: 'linear-gradient(130deg, #1a1a18, #1e2020)', span: '' },
-  { label: 'Press & Editorial', gradient: 'linear-gradient(125deg, #1a181a, #1a221a)', span: 'md:col-span-2' },
+  { src: '/jada-hero.jpg', label: 'Night Shoot',      span: 'md:col-span-2 md:row-span-2', pos: 'object-top' },
+  { src: '/jada-2.jpg',    label: 'Beauty Bar',       span: '',                             pos: 'object-center' },
+  { src: '/jada-3.jpg',    label: 'Dreaming',         span: '',                             pos: 'object-center' },
+  { src: '/jada-4.jpg',    label: 'Direct',           span: 'md:col-span-2',               pos: 'object-center' },
+  { src: '/jada-5.jpg',    label: 'Staircase',        span: '',                             pos: 'object-top' },
+  { src: '/jada-6.jpg',    label: 'Editorial',        span: '',                             pos: 'object-center' },
+  { src: '/jada-7.jpg',    label: 'Overhead',         span: 'md:col-span-2',               pos: 'object-top' },
 ];
 
 export default function Gallery() {
@@ -38,17 +39,20 @@ export default function Gallery() {
               transition={{ duration: 0.35, delay: i * 0.06 }}
               viewport={{ once: true }}
               className={`relative rounded-xl overflow-hidden group cursor-pointer ${item.span}`}
-              style={{ background: item.gradient }}
             >
-              {/* Overlay on hover */}
+              <img
+                src={item.src}
+                alt={item.label}
+                className={`w-full h-full object-cover ${item.pos} transition-transform duration-700 group-hover:scale-105`}
+              />
+              {/* Hover overlay */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 style={{ background: 'rgba(0,0,0,0.45)' }}>
                 <span className="font-label text-[10px] tracking-widest uppercase" style={{ color: '#f5f0e8' }}>
                   {item.label}
                 </span>
               </div>
-
-              {/* Subtle gold border on hover */}
+              {/* Gold border on hover */}
               <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                 style={{ border: '1px solid rgba(212,168,83,0.3)' }} />
             </motion.div>

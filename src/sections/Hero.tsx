@@ -5,74 +5,66 @@ export default function Hero() {
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        background: 'radial-gradient(ellipse at 55% 40%, #1a2a1f 0%, #0a0f0a 50%, #050505 100%)',
-      }}
     >
-      {/* Atmospheric glows */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute" style={{
-          top: '-20%', left: '-10%', width: '70%', height: '110%',
-          background: 'radial-gradient(circle, rgba(212,168,83,0.06) 0%, transparent 65%)',
-        }} />
-        <div className="absolute" style={{
-          bottom: '-10%', right: '-10%', width: '55%', height: '75%',
-          background: 'radial-gradient(circle, rgba(199,91,74,0.04) 0%, transparent 65%)',
-        }} />
+      {/* Hero photo */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/jada-1.jpg"
+          alt="Jada Kingdom"
+          className="w-full h-full object-cover object-top"
+          style={{ filter: 'brightness(0.55) saturate(0.75) contrast(1.05)' }}
+        />
+        {/* Bottom-heavy dark gradient so title text sits clean */}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(5,5,5,0.97) 0%, rgba(5,5,5,0.7) 30%, rgba(5,5,5,0.25) 65%, transparent 100%)' }} />
+        {/* Subtle gold tint centre */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 35%, rgba(212,168,83,0.08) 0%, transparent 60%)' }} />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      {/* Content — bottom-left anchored on desktop, centered on mobile */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-16 pb-24 pt-32 flex flex-col justify-end min-h-screen">
 
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
+        {/* Label */}
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-block mb-8 px-5 py-2 rounded-full font-body text-xs font-medium tracking-[0.12em] uppercase"
-          style={{
-            border: '1px solid rgba(212,168,83,0.4)',
-            background: 'rgba(212,168,83,0.06)',
-            color: '#e8c97a',
-            backdropFilter: 'blur(10px)',
-          }}
+          className="font-label text-[10px] tracking-[0.22em] uppercase mb-6"
+          style={{ color: '#d4a853' }}
         >
           ★ New Music Available Now
-        </motion.div>
+        </motion.p>
 
-        {/* Title */}
-        <div className="overflow-hidden mb-3">
+        {/* Title — Bodoni Moda, large, editorial */}
+        <div className="overflow-hidden mb-1">
           <motion.h1
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="font-display font-bold leading-none"
-            style={{ fontSize: 'clamp(3.5rem, 10vw, 7.5rem)', color: '#fdfaf5', letterSpacing: '-0.02em' }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(4rem, 13vw, 10rem)', color: '#fdfaf5', letterSpacing: '-0.03em', lineHeight: 0.9, fontWeight: 700 }}
           >
             Jada
           </motion.h1>
         </div>
-        <div className="overflow-hidden mb-6">
+        <div className="overflow-hidden mb-8">
           <motion.h1
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            className="font-display font-bold italic leading-none"
-            style={{ fontSize: 'clamp(3.5rem, 10vw, 7.5rem)', color: '#d4a853', letterSpacing: '-0.02em', fontWeight: 400 }}
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(4rem, 13vw, 10rem)', color: '#d4a853', letterSpacing: '-0.03em', lineHeight: 0.9, fontWeight: 400, fontStyle: 'italic' }}
           >
             Kingdom
           </motion.h1>
         </div>
 
-        {/* Subtitle */}
+        {/* Subtitle — Cormorant, refined */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="font-body font-light mb-10 mx-auto"
-          style={{ fontSize: '1.1rem', color: 'rgba(245,240,232,0.6)', maxWidth: '480px', lineHeight: 1.7 }}
+          style={{ fontFamily: 'var(--font-editorial)', fontSize: 'clamp(1.05rem, 2vw, 1.35rem)', color: 'rgba(245,240,232,0.55)', maxWidth: '440px', lineHeight: 1.65, fontStyle: 'italic', fontWeight: 300 }}
+          className="mb-10"
         >
-          The reigning queen of modern dancehall — bold, unapologetic, and unmistakably authentic.
+          The reigning queen of modern dancehall — bold, unapologetic, unmistakably authentic.
         </motion.p>
 
         {/* CTAs */}
@@ -80,24 +72,24 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.75 }}
-          className="flex gap-4 justify-center flex-wrap"
+          className="flex gap-4 flex-wrap"
         >
           <a
             href="#music"
-            className="font-body font-semibold text-sm tracking-wider px-8 py-3 rounded-full flex items-center gap-2 transition-all duration-300"
+            className="font-body font-medium text-sm tracking-wider px-8 py-3 flex items-center gap-2 transition-all duration-300"
             style={{ background: '#d4a853', color: '#0d0d0d', boxShadow: '0 4px 25px rgba(212,168,83,0.3)' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#e8c97a'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#d4a853'; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#e8c97a'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#d4a853'; }}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
             Listen Now
           </a>
           <a
             href="#tour"
-            className="font-body font-semibold text-sm tracking-wider px-8 py-3 rounded-full transition-all duration-300"
-            style={{ border: '1.5px solid rgba(255,255,255,0.25)', color: '#f5f0e8' }}
+            className="font-body font-medium text-sm tracking-wider px-8 py-3 transition-all duration-300"
+            style={{ border: '1px solid rgba(255,255,255,0.2)', color: '#f5f0e8' }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#d4a853'; (e.currentTarget as HTMLElement).style.color = '#e8c97a'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.25)'; (e.currentTarget as HTMLElement).style.color = '#f5f0e8'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.2)'; (e.currentTarget as HTMLElement).style.color = '#f5f0e8'; }}
           >
             Tour Dates
           </a>
@@ -105,9 +97,9 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
-        <span className="font-body text-[10px] tracking-[0.12em] uppercase" style={{ color: 'rgba(245,240,232,0.3)' }}>Scroll</span>
-        <div className="w-px h-10" style={{ background: 'linear-gradient(to bottom, #d4a853, transparent)' }} />
+      <div className="absolute bottom-8 right-12 flex flex-col items-center gap-2 z-10 hidden md:flex">
+        <div className="w-px h-12" style={{ background: 'linear-gradient(to bottom, #d4a853, transparent)' }} />
+        <span className="font-label text-[9px] tracking-[0.18em] uppercase" style={{ color: 'rgba(212,168,83,0.5)', writingMode: 'vertical-rl' }}>Scroll</span>
       </div>
     </section>
   );
