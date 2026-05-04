@@ -1,8 +1,8 @@
 const SOCIALS = [
   { label: 'Instagram',    href: 'https://www.instagram.com/jadakingdom/' },
-  { label: 'YouTube',      href: 'https://www.youtube.com/@JadaKingdomOfficial' },
-  { label: 'Spotify',      href: 'https://open.spotify.com/artist/4l3NzXBCvnuqCaUFYxbSYV' },
-  { label: 'Apple Music',  href: 'https://music.apple.com/us/artist/jada-kingdom/1440680454' },
+  { label: 'YouTube',      href: 'https://www.youtube.com/channel/UCmcrTPKYzbw2fQHiAjWg4_g' },
+  { label: 'Spotify',      href: 'https://open.spotify.com/artist/2FgooFaZzZy6PUyJImk0kG?autoplay=true' },
+  { label: 'Apple Music',  href: 'https://music.apple.com/jm/artist/jada-kingdom/1256243176' },
   { label: 'TikTok',       href: 'https://www.tiktok.com/@jadakingdom' },
 ];
 

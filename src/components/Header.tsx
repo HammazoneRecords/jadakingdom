@@ -5,6 +5,7 @@ const NAV = [
   { label: 'Music',   href: '#music' },
   { label: 'About',   href: '#about' },
   { label: 'Tour',    href: '#tour' },
+  { label: 'Merch',   href: '#merch' },
   { label: 'Gallery', href: '#gallery' },
 ];
 

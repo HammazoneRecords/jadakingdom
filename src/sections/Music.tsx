@@ -2,32 +2,32 @@ import { motion } from 'motion/react';
 
 const RELEASES = [
   {
-    title: 'Banana',
-    year: '2024',
-    type: 'Single',
-    gradient: 'linear-gradient(145deg, #2a1a1a, #1a1a2a)',
-    spotify: 'https://open.spotify.com/artist/4l3NzXBCvnuqCaUFYxbSYV',
-  },
-  {
-    title: 'Love Situations',
-    year: '2023',
+    title: 'New Religion',
+    year: '2026',
     type: 'EP',
-    gradient: 'linear-gradient(145deg, #1a2a20, #1a1a18)',
-    spotify: 'https://open.spotify.com/artist/4l3NzXBCvnuqCaUFYxbSYV',
+    cover: 'https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0287d8b5edd66152663d9f090a',
+    spotify: 'https://open.spotify.com/track/7A1wR1lIDjV5iGwvLodbSF',
   },
   {
-    title: 'WiN',
+    title: 'Turn Me On',
     year: '2023',
-    type: 'Single',
-    gradient: 'linear-gradient(145deg, #1a1a22, #201a1a)',
-    spotify: 'https://open.spotify.com/artist/4l3NzXBCvnuqCaUFYxbSYV',
+    type: 'Single · 14.3M streams',
+    cover: 'https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e0259f63d990fee7aeb20c24df8',
+    spotify: 'https://open.spotify.com/album/3jPUbEDcV2Q0dSpXXOw84i',
+  },
+  {
+    title: "What's Up (Big Buddy)",
+    year: '2024',
+    type: 'Single · 10.6M streams',
+    cover: 'https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02a95ec40adb0bebee12f2c9f2',
+    spotify: 'https://open.spotify.com/track/2Zqi4KB2Wl0Luxwwx4qEM7',
   },
 ];
 
 const STREAMS = [
-  { name: 'Spotify',     href: 'https://open.spotify.com/artist/4l3NzXBCvnuqCaUFYxbSYV' },
-  { name: 'Apple Music', href: 'https://music.apple.com/us/artist/jada-kingdom/1440680454' },
-  { name: 'YouTube',     href: 'https://www.youtube.com/@JadaKingdomOfficial' },
+  { name: 'Spotify',     href: 'https://open.spotify.com/artist/2FgooFaZzZy6PUyJImk0kG?autoplay=true' },
+  { name: 'Apple Music', href: 'https://music.apple.com/jm/artist/jada-kingdom/1256243176' },
+  { name: 'YouTube',     href: 'https://www.youtube.com/channel/UCmcrTPKYzbw2fQHiAjWg4_g' },
 ];
 
 export default function Music() {
@@ -67,10 +67,13 @@ export default function Music() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(212,168,83,0.35)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; }}
             >
-              {/* Art */}
-              <div className="w-full aspect-square flex items-center justify-center font-display font-bold text-5xl"
-                style={{ background: r.gradient, color: 'rgba(255,255,255,0.12)', letterSpacing: '0.06em' }}>
-                {r.title.slice(0, 2).toUpperCase()}
+              {/* Cover art */}
+              <div className="w-full aspect-square overflow-hidden">
+                <img
+                  src={r.cover}
+                  alt={r.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
               {/* Info */}
               <div className="p-5">

@@ -5,6 +5,7 @@ import Music from './sections/Music';
 import About from './sections/About';
 import Tour from './sections/Tour';
 import Gallery from './sections/Gallery';
+import Merch from './sections/Merch';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
 
@@ -17,6 +18,7 @@ export default function App() {
         <Music />
         <About />
         <Tour />
+        <Merch />
         <Gallery />
         <Contact />
       </main>

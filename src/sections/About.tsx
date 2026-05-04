@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
 
 const STATS = [
-  { number: '150M+', label: 'Global Streams' },
-  { number: '3M+',   label: 'Monthly Listeners' },
-  { number: '50+',   label: 'Countries Reached' },
+  { number: '385K+', label: 'Monthly Listeners' },
+  { number: '14.3M', label: 'Streams — Turn Me On' },
+  { number: '2026',  label: 'Latest EP: New Religion' },
 ];
 
 export default function About() {
@@ -34,19 +34,10 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl overflow-hidden flex items-center justify-center font-display font-bold"
-            style={{
-              aspectRatio: '4/5',
-              background: 'linear-gradient(160deg, #1e2a20, #1a1518)',
-              border: '1px solid rgba(212,168,83,0.15)',
-              fontSize: '6rem',
-              color: 'rgba(212,168,83,0.08)',
-              maxWidth: '400px',
-              margin: '0 auto',
-              width: '100%',
-            }}
+            className="overflow-hidden"
+            style={{ aspectRatio: '4/5', maxWidth: '400px', margin: '0 auto', width: '100%', border: '1px solid rgba(212,168,83,0.15)' }}
           >
-            JK
+            <img src="/jada-4.jpg" alt="Jada Kingdom" className="w-full h-full object-cover object-top" />
           </motion.div>
 
           {/* Text */}
