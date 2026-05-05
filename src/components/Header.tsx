@@ -25,7 +25,7 @@ export default function Header() {
         className="fixed top-0 left-0 right-0 z-40 h-16 transition-all duration-500"
         style={scrolled ? { background: 'rgba(8,8,8,0.92)', backdropFilter: 'blur(20px)' } : {}}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-12 h-full flex items-center justify-between">
+        <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "0 clamp(1.5rem, 5vw, 5rem)" }} className="h-full flex items-center justify-between">
 
           {/* Wordmark */}
           <a href="#home" className="font-display font-bold text-lg" style={{ color: '#d4a853', letterSpacing: '0.04em' }}>

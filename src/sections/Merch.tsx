@@ -11,7 +11,7 @@ const ITEMS = [
 export default function Merch() {
   return (
     <section id="merch" style={{ padding: '6rem 0', borderTop: '1px solid rgba(255,255,255,0.04)' }}>
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+      <div style={{ maxWidth: "72rem", margin: "0 auto", padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
 
         {/* Header */}
         <motion.div

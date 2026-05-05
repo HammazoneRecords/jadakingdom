@@ -13,7 +13,7 @@ const ITEMS = [
 export default function Gallery() {
   return (
     <section id="gallery" style={{ padding: '6rem 0' }}>
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+      <div style={{ maxWidth: "72rem", margin: "0 auto", padding: "0 clamp(1.5rem, 5vw, 5rem)" }}>
 
         {/* Header */}
         <motion.div
