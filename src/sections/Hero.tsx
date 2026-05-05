@@ -21,7 +21,7 @@ export default function Hero() {
       </div>
 
       {/* Content — bottom-left anchored on desktop, centered on mobile */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-16 pb-24 pt-32 flex flex-col justify-end min-h-screen">
+      <div className="relative z-10 w-full flex flex-col justify-end min-h-screen" style={{ maxWidth: '80rem', margin: '0 auto', padding: 'clamp(5rem, 10vw, 8rem) clamp(2rem, 8vw, 7rem) clamp(5rem, 8vw, 7rem)' }}>
 
         {/* Label */}
         <motion.p
